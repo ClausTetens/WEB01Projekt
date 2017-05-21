@@ -1,0 +1,110 @@
+﻿@model Voresjazzklub.Models.ArranModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4 class="large-text fin-farve">@Html.DisplayFor(model => model.arrangementBeskrivelse)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangementBeskrivelse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrangementBeskrivelse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createTs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createTs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangementWeb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrangementWeb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangementDt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrangementDt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangemnetTid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrangemnetTid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spiseSted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spiseSted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spiseTid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spiseTid)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*BilledeArrangs/index/37*@
+    @Html.ActionLink("Tilmelding", "Index", "Tilmeldingers", new { id = Model.arrangementId }, null) |
+    @Html.ActionLink("Upload billeder", "Index", "Upload", new { id = Model.arrangementId }, null) |
+    @Html.ActionLink("Vis billeder", "Index", "BilledeArrangs", new { id = Model.arrangementId}, null) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.arrangementId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+    @*
+
+    LinkText, actionName, routeValues, htmlAttributes
+    @Html.ActionLink("Billeder", "Index", "BillledeArrangs", new { id = Model.arrangementId }) |
+    <a href="/Arran/Index?Length=15" id="1">Billeder</a> |
+
+    LinkText, actionName, controllerName
+    @Html.ActionLink("Billeder", "Index/"+ Model.arrangementId, "BillledeArrangs") |
+    LinkText, actionName, controllerName, routeValues, htmlAttributes
+    @Html.ActionLink("Billeder", "Index", "BillledeArrangs", new { id = Model.arrangementId }, null) |
+    giver samme resultat:
+    <a href="/BilledeArrangs/Index/1">Billeder</a> |
+    <a href="/BilledeArrangs/Index/1">Billeder</a> |
+
+    @Html.ActionLink("Billeder", "Index", "BilledeArrangs", new { id = Model.arrangementId, svalbart="HundeHoved", pølle="NixDorf"}, null) |
+    <a href="/BilledeArrangs/Index/1?svalbart=HundeHoved&pølle=NixDorf">Billeder</a> |
+
+
+    
+    @Html.ActionLink("Billeder", "Index", "BilledeArrangs", new { id = Model.arrangementId, svalbart="HundeHoved", pølle="NixDorf"}, null) |
+    <a href="/BilledeArrangs/Index/1/Twesgæq/HundeHoved?pølle=NixDorf">Billeder</a> |
+
+    url: "{controller}/{action}/{id}/{bruger}/{svalbart}",
+    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional, bruger=UrlParameter.Optional, svalbart=UrlParameter.Optional}
+
+
+    localhost:60902/Arran/Details/1
+
+    http://stackoverflow.com/questions/14152575/pass-parameter-to-controller-from-html-actionlink-mvc-4
+    http://stackoverflow.com/questions/1810063/how-do-i-create-the-correct-route-values-for-this-actionlink
+
+    *@

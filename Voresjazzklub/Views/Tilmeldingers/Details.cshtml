@@ -1,0 +1,59 @@
+﻿@model Voresjazzklub.Models.Tilmeldinger
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4 class="large-text fin-farve">
+        @Html.DisplayFor(model => model.brugerId) til
+        @ViewBag.arrangementBeskrivelse
+    </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangementId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.arrangementId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.brugerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brugerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createTs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createTs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.erTilmeldt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.erTilmeldt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spiser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spiser)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.arrangementId, bruger = Model.brugerId }) |
+    @Html.ActionLink("Back to List", "Index", new { id = Model.arrangementId })
+</p>

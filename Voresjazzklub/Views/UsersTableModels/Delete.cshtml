@@ -1,0 +1,72 @@
+﻿@model Voresjazzklub.Models.UsersTableModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Er du sikker på, at du vil fjerne</h3>
+<div>
+    <h4 class="large-text fin-farve">@Html.DisplayFor(model => model.brugerId)?</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.createTs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createTs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.erAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.erAdmin)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

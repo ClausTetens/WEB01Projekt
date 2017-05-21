@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Voresjazzklub.Models.UsersTableModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<h4 class="large-text fin-farve">Alle brugere</h4>
+<!--
+
+http://www.tutorialsteacher.com/mvc/integrate-controller-view-model
+
+https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/adding-a-model
+
+https://www.asp.net/identity
+    -->
+<p>
+    @Html.ActionLink("Opret ny bruger", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.brugerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createTs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.erAdmin)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem=>item.brugerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createTs)
+        </td>
+        <td>
+            @item.password.Substring(0, 6)...
+            @*@Html.DisplayFor(modelItem => item.password)*@
+        </td>
+        <td>
+            @item.salt.Substring(0,6)...
+            @*@Html.DisplayFor(modelItem => item.salt)*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.erAdmin)
+        </td>
+        <td>
+
+            @Html.ActionLink("Edit", "Edit", new { id=item.brugerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.brugerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.brugerId })
+        </td>
+    </tr>
+}
+
+</table>

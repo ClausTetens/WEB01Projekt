@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Voresjazzklub.Models.ArrangementModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.arrangementBeskrivelse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createTs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.arrangementWeb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.arrangementDt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.arrangemnetTid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spiseSted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spiseTid)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.arrangementBeskrivelse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createTs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.arrangementWeb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.arrangementDt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.arrangemnetTid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.spiseSted)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.spiseTid)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.arrangementId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.arrangementId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.arrangementId })
+        </td>
+    </tr>
+}
+
+</table>

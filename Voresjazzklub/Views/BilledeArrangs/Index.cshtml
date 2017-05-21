@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Voresjazzklub.Models.BilledeArrang>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index for Billede &amp; Arrangement</h2>
+
+<h4 class="large-text fin-farve">Billeder fra @ViewBag.arrangementBeskrivelse</h4>
+
+<p>
+    @{
+        var id = ViewBag.arrangementId;
+    }
+    @Html.ActionLink("Create New", "Create", new { id })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.billedAdresse)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.arrangementId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.brugerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createTs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kommentar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.arrangementBeskrivelse)
+        </th>
+        <th></th>
+    </tr>
+    @foreach(var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.billedAdresse)
+                <img src="@Url.Content(@item.billedAdresse)" id="@item.billedAdresse" height="100" onmouseover="largeImg(this.id)" onmouseout="thumpImg(this.id)" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.arrangementId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.brugerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createTs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kommentar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.arrangementBeskrivelse)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { arran = ViewBag.arrangementId, id = item.billedId }) |
+                @Html.ActionLink("Details", "Details", new { arran = ViewBag.arrangementId, id = item.billedId }) |
+                @Html.ActionLink("Delete", "Delete", new { arran = ViewBag.arrangementId, id = item.billedId })
+            </td>
+        </tr>
+    }
+
+</table>

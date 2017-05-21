@@ -1,0 +1,70 @@
+﻿@model Voresjazzklub.Models.BilledeArrang
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Vil du slette</h3>
+<div>
+    <h4 class="large-text fin-farve">
+        @Html.DisplayFor(model => model.arrangementBeskrivelse)?
+    </h4>
+        <img src="@Url.Content(@Model.billedAdresse)" height="150" />
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangementId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrangementId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.brugerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brugerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createTs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createTs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kommentar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kommentar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangementBeskrivelse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrangementBeskrivelse)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="hidden" id="arran" value="@Model.arrangementId"/>
+
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index", new { id = Model.arrangementId })
+        </div>
+    }
+</div>

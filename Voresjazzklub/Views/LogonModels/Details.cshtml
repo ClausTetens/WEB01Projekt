@@ -1,0 +1,34 @@
+﻿@model Voresjazzklub.Models.LogonModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4 class="large-text fin-farve">@Html.DisplayFor(model => model.brugerId)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.lastlogon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastlogon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.logonCnt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.logonCnt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.brugerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

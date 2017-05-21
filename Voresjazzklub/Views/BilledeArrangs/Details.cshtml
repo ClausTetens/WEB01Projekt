@@ -1,0 +1,62 @@
+﻿@model Voresjazzklub.Models.BilledeArrang
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4 class="large-text fin-farve">
+        @Html.DisplayFor(model => model.arrangementBeskrivelse)
+    </h4>
+        <img src="@Url.Content(@Model.billedAdresse)" id="@Model.billedAdresse" height="300" onmouseover="largeImg(this.id)" onmouseout="mediumImg(this.id)" /> 
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangementId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrangementId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.brugerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.brugerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createTs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createTs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kommentar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kommentar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangementBeskrivelse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrangementBeskrivelse)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.billedId }) |
+    @Html.ActionLink("Back to List", "Index", new { id = Model.arrangementId })
+</p>

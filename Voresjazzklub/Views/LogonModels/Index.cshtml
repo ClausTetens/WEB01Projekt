@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Voresjazzklub.Models.LogonModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("en anden måde at oprette nye brugere på, hvis de ikke selv kan", "Create")
+</p>
+<h4 class="large-text fin-farve">Logins på Voresjazzklub</h4>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.brugerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastlogon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.logonCnt)
+        </th>
+        <th></th>
+    </tr>
+    @{var logonCount = 0; }
+    @foreach(var item in Model) {
+         logonCount += item.logonCnt; 
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.brugerId)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.lastlogon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.logonCnt)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.brugerId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.brugerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.brugerId })
+            </td>
+        </tr>
+    }
+
+
+</table>
+
+@Model.Sum(x => x.logonCnt) som Model.Sum @logonCount som imperativ sammentælling

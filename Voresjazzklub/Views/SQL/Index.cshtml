@@ -1,0 +1,63 @@
+﻿@using Voresjazzklub.Models
+@model SQLmodel
+
+@{
+    ViewBag.Title = "SQLView";
+}
+
+<h2>SQLView</h2>
+
+@if(Model!=null) { @Model.sqlScript}
+
+
+
+<script>
+    function enFunktion() {
+        if (typeof (Storage) !== "undefined") {
+            sessionStorage.setItem("etNummer", 37);
+            var item = sessionStorage.getItem("etNummer");
+            document.getElementById("hiddenVal").innerHTML = item;
+            document.getElementById("myLabel").innerHTML = item;
+        }
+    }
+</script>
+<script>
+    function enAndenFunktion() {
+        if (typeof (Storage) !== "undefined") {
+            var item = sessionStorage.getItem("etNummer");
+            document.getElementById("myLabel").innerHTML = item+77; // koncatenering
+        }
+    }
+</script>
+
+<input type="submit" onclick="enFunktion()" />
+<input type="submit" onclick="enAndenFunktion()" />
+
+<section id="sqlForm">
+    @using(Html.BeginForm("", "SQL", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post)) {
+        @Html.TextAreaFor(m => m.sqlId)<br />
+        @Html.TextAreaFor(m => m.sqlScript)<br />
+        @Html.TextAreaFor(m => m.sqlResult)<br />
+
+        <input type="hidden" id="hiddenVal" name="hiddenVal" value="6000" />
+        <label id="myLabel" name="myLabel" ></label>
+
+        @*Html.HiddenFor(x => x.sqlId)*@
+        @* http://stackoverflow.com/questions/33649142/how-to-retrieve-a-value-from-the-local-storage-in-c-sharp-code *@
+
+        <input type="submit"/>
+    }
+    @*
+        if(@Model!=null && @Model.sqlId!=null) {
+        @Model.sqlId<br />
+        @Model.sqlResult<br />
+        @Model.sqlScript<br />
+        }*@
+
+    @ViewBag.sql<br />
+    @ViewBag.res<br />
+</section>
+
+<br />
+kommunikation med model<br />
+http://stackoverflow.com/questions/4784225/mvc-3-file-upload-and-model-binding

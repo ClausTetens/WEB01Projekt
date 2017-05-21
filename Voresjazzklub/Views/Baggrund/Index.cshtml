@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Baggrund</h2>
+
+<div class="w3-container">
+    <h4 class="large-text fin-farve">Væsentligste inspirationskilder</h4>
+    <label class="w3-bar-item jazzlabeltext">nyt vindue</label>
+    <div class="w3-bar w3-black">
+        <abbr title="www.w3schools.com">
+            <input type="button" class="w3-bar-item w3-button" onClick="window.open ('https://www.w3schools.com/')" value='w3schools'>
+        </abbr>
+        <abbr title="docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/getting-started">
+            <input type="button" class="w3-bar-item w3-button" onClick="window.open ('https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/getting-started')" value='asp.net mvc'>
+            </abbr>
+        <abbr title="www.tutorialsteacher.com/mvc/asp.net-mvc-tutorials">
+            <input type="button" class="w3-bar-item w3-button" onClick="window.open ('http://www.tutorialsteacher.com/mvc/asp.net-mvc-tutorials')" value='tutorialsteacher'>
+            </abbr>
+        <abbr title="stackoverflow.com">
+            <input type="button" class="w3-bar-item w3-button" onClick="window.open('http://stackoverflow.com')" value='stackoverflow'>
+            </abbr>
+        <abbr title="www.google.de">
+            <input type="button" class="w3-bar-item w3-button" onClick="window.open ('https://www.google.de//')" value='google'>
+            </abbr>
+        <abbr title="docs.microsoft.com/en-us/dotnet/articles/csharp/programming-guide/index">
+            <input type="button" class="w3-bar-item w3-button" onClick="window.open ('https://docs.microsoft.com/en-us/dotnet/articles/csharp/programming-guide/index')" value='microsoft C#'>
+            </abbr>
+            <!--button class="w3-bar-item w3-button">Button</button sakset fra https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_buttons_bar_nav -->
+</div>
+    <label class="w3-bar-item jazzlabeltext">samme vindue</label>
+    <div class="w3-bar anOtherColour">
+        <input type="button" class="w3-bar-item w3-button" onClick="parent.location = 'https://www.w3schools.com/'" value='w3schools'>
+        <input type="button" class="w3-bar-item w3-button" onClick="parent.location = 'https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/getting-started'" value='asp.net mvc'>
+        <input type="button" class="w3-bar-item w3-button" onClick="parent.location = 'http://www.tutorialsteacher.com/mvc/asp.net-mvc-tutorials'" value='tutorialsteacher'>
+        <input type="button" class="w3-bar-item w3-button" onClick="parent.location = 'http://stackoverflow.com'" value='stackoverflow'>
+        <input type="button" class="w3-bar-item w3-button" onClick="parent.location = 'https://www.google.de//'" value='google'>
+        <input type="button" class="w3-bar-item w3-button" onClick="parent.location = 'https://docs.microsoft.com/en-us/dotnet/articles/csharp/programming-guide/index'" value='microsoft C#'>
+        <!--button class="w3-bar-item w3-button">Button</button sakset fra https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_buttons_bar_nav -->
+    </div>
+</div>
+
+<br /><br />

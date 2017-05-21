@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Voresjazzklub.Models.Billede>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Billedindex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.billedAdresse)
+        </th>
+         
+        <th>
+            @Html.DisplayNameFor(model => model.arrangementId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.brugerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createTs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.kommentar)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.billedAdresse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.arrangementId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.brugerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.createTs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.kommentar)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.billedAdresse }) |
+            @Html.ActionLink("Details", "Details", new { id=item.billedAdresse }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.billedAdresse })
+        </td>
+    </tr>
+}
+
+</table>

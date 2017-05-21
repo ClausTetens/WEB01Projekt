@@ -1,0 +1,83 @@
+﻿@model Voresjazzklub.Models.BilledeArrang
+@using Voresjazzklub.Models
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Upload billeder</h2>
+
+
+
+
+
+@*using(Html.BeginForm("FileUpload", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" })) {*@
+@using(Html.BeginForm("Index", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <!--div class="alert alert-success alert-dismissible" role="alert">@ViewBag.Message</div-->
+
+    <div class="form-horizontal">
+        <h4 class="large-text fin-farve">@ViewBag.arrangementBeskrivelse</h4>
+
+        <hr />
+        @Html.ValidationSummary(true)
+
+        @if(Model != null) {
+            if(@Model.billedAdresse != null) {
+                <img src="@Url.Content(@Model.billedAdresse)" height="100" />
+            }
+
+            <br />
+
+
+                <div class="form-group">
+
+                    @Html.DisplayFor(model => model.billedAdresse)<br />
+                    @ViewBag.arrangementBeskrivelse<br />
+                    @Html.DisplayFor(model => model.brugerId)
+                    <br/>
+                    <label class="control-label col-md-2">Kommentar</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.kommentar)
+                    </div>
+                </div>
+        }
+
+
+
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Billede</label>
+            <div class="col-md-10">
+                <input type="file" name="someOtherFile" class="form-control" />
+                <span class="field-validation-error" id="spanfilesomeOtherFile"></span>
+            </div>
+        </div>
+
+        @*http://www.itorian.com/2012/10/html-helper-for-image-htmlimage.html*@
+        @*{ @if(Model != null) {
+                string addr = Model.billedAdresse;
+                @Html.Image(addr, "altText " + addr, "100px");
+            }
+            }*@
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Upload billede og tekst" class="btn btn-default" />
+                <!--input type="submit" name="Submit" id="btnSubmit" value="Upload billede og tekst" class="btn btn-default" /-->
+            </div>
+        </div>
+    </div>
+}
+
+<!--
+    
+                @Html.DisplayFor(model => model.billedAdresse)<br />
+                @ViewBag.arrangementBeskrivelse<br />
+                @Html.DisplayFor(model => model.brugerId)<br /><br />
+                <text>Kommentar til koncerten</text><br />
+                @Html.EditorFor(model => model.kommentar)<br />
+
+-->

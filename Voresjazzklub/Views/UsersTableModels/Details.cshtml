@@ -1,0 +1,66 @@
+﻿@model Voresjazzklub.Models.UsersTableModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4 class="large-text fin-farve">@Html.DisplayFor(model => model.brugerId)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.createTs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createTs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.erAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.erAdmin)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.brugerId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

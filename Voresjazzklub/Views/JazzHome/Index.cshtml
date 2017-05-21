@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>@ViewBag.title</h2>
+
+<h4 class="large-text fin-farve">Vores Jazzklub</h4>
+
+
+
+
+<table style="text-align:center">
+    <tr>
+        <td></td>
+        <td><a href="/arran/index"><img src="~/img/carion-pr-06-e1444068898810-600x400.jpg" style="height:200px;" class="w3-hover-grayscale" /></a></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><a href="/logonmodels"><img src="~/img/pie-chart-149727_960_720.png" style="height:200px"  class="w3-hover-grayscale"/></a></td>
+        <td></td>
+        <td><a href="/userstablemodels"><img src="~/img/brugere.png" style="height:200px"  class="w3-hover-grayscale"/></a></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><a href="/arran/afslut"><img src="~/img/udgang_thumb_COLOURBOX6859829.jpg"  style="height:200px"  class="w3-hover-grayscale"/></a></td>
+        <td></td>
+    </tr>
+</table>
+
+<br/>
+@if(ViewBag.userId != null) { <div>Velkommen @ViewBag.userId - Sidst set @ViewBag.lastlogon</div> } else { <div>Ingen user</div>}
+
+<br/>
+
+<a href="/logonmodels">Brugs statistik</a> | 
+<a href="/arran/index">Koncerter</a> | 
+<a href="/userstablemodels">brugere</a> | 
+<a href="/arran/afslut">Farvel og tak for denne gang</a>

@@ -1,0 +1,175 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    <dl class="dl-horizontal" style="margin-left: 0px;text-align: left; width: 500px; border:1px solid blue;">
+        <dt style="margin-left: 50px;text-align: right; width: 70px;">Gade</dt>
+        <dd>Gydegaden 22</dd>
+        <dt>By</dt>
+        <dd>3400 Hillerød</dd>
+        <dt><abbr title="Telefonnummer">Tlf</abbr></dt>
+        <dd>12 23 34 45</dd>
+
+        <dt><abbr title="email-adresse">email</abbr></dt>
+        <dd>claus@tetens.biz</dd>
+    </dl>
+    <br />
+    <br />
+    <abbr title="Telefonnummer">T:</abbr>12 23 34 45
+    <abbr title="Email-adresse">E:</abbr>claus@tetens.biz
+</address>
+
+<address>
+    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+</address>
+
+<br/>
+HttpContext.Session["Value"]<br />
+http://machinesaredigging.com/2013/10/29/how-does-a-web-session-work/
+<br />
+
+static class<br />
+sessionStorage <--> C#<br />
+
+
+    <pre>
+        &lt;form action="Upload/UploadFiles"&gt;
+           &lt;input type="file" name="pic" multiple accept="image/*"&gt;
+           &lt;input type="submit"&gt;
+        &lt;/form&gt;
+    </pre>
+
+    <form action="Upload/UploadFiles">
+        <input type="file" name="pic" multiple accept="image/*">
+        <input type="submit">
+    </form>
+
+    <br/><br /><br />
+
+    https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/adding-validation
+    <br />
+    http://www.tutorialsteacher.com/mvc/integrate-controller-view-model
+                   <br />
+                   http://www.tutorialsteacher.com/mvc/routing-in-mvc
+
+
+    <br />
+
+
+
+                   https://www.hanselman.com/blog/ABackToBasicsCaseStudyImplementingHTTPFileUploadWithASPNETMVCIncludingTestsAndMocks.aspx<br />
+
+
+@using(Html.BeginForm("Index", "Upload", FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
+    @Html.AntiForgeryToken()
+    <h4>Upload</h4>
+    <hr />
+
+    <input type="file" name="file" id="file" multiple accept="image/*">
+
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Op med dem" />
+        </div>
+    </div>
+}
+
+
+
+
+
+
+
+
+
+                   http://haacked.com/archive/2010/07/16/uploading-files-with-aspnetmvc.aspx/<br />
+
+    <form action="/Upload" method="post" enctype="multipart/form-data">
+
+        <label for="file">Filename:</label>
+        <input type="file" name="file" id="file" />
+
+        <input type="submit" />
+    </form>
+
+
+
+
+
+
+    <h1>FileUpload</h1>
+    <h3>http://stackoverflow.com/questions/27003305/html-beginform-multipart-form-data-file-upload-form-group-validation</h3>
+
+
+
+                   @using(Html.BeginForm("FileUpload", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+                       @Html.AntiForgeryToken()
+                       @Html.ValidationSummary();
+                       <div class="alert alert-success alert-dismissible" role="alert">@ViewBag.Message</div>
+
+                       <div class="form-horizontal">
+                           <h4>Upload Data Documents</h4>
+                           <hr />
+                           @Html.ValidationSummary(true)
+                           @*
+                           @Html.HiddenFor(model => model.project_id)
+                           *@
+
+                           <div class="form-group">
+                               <label class="control-label col-md-2">Some Other File</label>
+                               <div class="col-md-10">
+                                   <input type="file" name="someOtherFile" class="form-control" />
+                                   <span class="field-validation-error" id="spanfilesomeOtherFile"></span>
+                               </div>
+                           </div>
+                           <div class="form-group">
+                               <label class="control-label col-md-2">Results Comparison</label>
+                               <div class="col-md-10">
+                                   <div class="form-group">
+                                       <div class="col-md-4">
+                                           <input type="file" name="FileUploadResultsComparison" class="form-control" placeholder=".col-md-4" />
+                                           <span class="field-validation-error" id="spanfileResultsComparison"></span>
+                                       </div>
+                                       <div class="col-md-4">
+                                           @if(ViewData["Project"] != null) {
+                                               @Html.DropDownList("resultsComp_project", (SelectList)ViewData["Project"], "Select a Project", new { @class = "form-control", @placeholder = ".col-md-4" })
+                                           }
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="form-group">
+                               <label class="control-label col-md-2">Memory Usage</label>
+                               <div class="col-md-10">
+                                   <div class="form-group">
+                                       <div class="col-md-4">
+                                           <input type="file" name="FileUploadMemoryUsage" class="form-control" />
+                                           <span class="field-validation-error" id="spanfileMemoryUsage"></span>
+                                       </div>
+                                       <div class="col-md-4">
+                                           @if(ViewData["Project"] != null) {
+                                               @Html.DropDownList("memUsage_project", (SelectList)ViewData["Project"], "Select a Project", new { @class = "form-control", @placeholder = ".col-md-4" })
+                                           }
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="form-group">
+                               <div class="col-md-offset-2 col-md-10">
+                                   <input type="submit" name="Submit" id="btnSubmit" value="Upload Files" class="btn btn-default" />
+                               </div>
+                           </div>
+                           </div>
+                           }
+
+
+
+
+
+

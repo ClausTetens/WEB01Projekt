@@ -1,0 +1,58 @@
+﻿
+@model IEnumerable<Voresjazzklub.Models.Tilmeldinger>
+
+@{
+    ViewBag.Title = "Tilmeldte";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.arrangementId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.brugerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.createTs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.erTilmeldt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spiser)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach(var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.arrangementId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.brugerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createTs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.erTilmeldt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.spiser)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.arrangementId, bruger = item.brugerId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.arrangementId, bruger = item.brugerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.arrangementId, bruger = item.brugerId })
+            </td>
+        </tr>
+    }
+
+</table>

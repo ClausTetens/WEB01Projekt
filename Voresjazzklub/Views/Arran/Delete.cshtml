@@ -1,0 +1,80 @@
+﻿@model Voresjazzklub.Models.ArranModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Er der ingen, der skal med til denne koncert?</h3>
+<div>
+    <h4 class="large-text fin-farve">@Html.DisplayFor(model => model.arrangementBeskrivelse)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangementBeskrivelse)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrangementBeskrivelse)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.createTs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.createTs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangementWeb)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrangementWeb)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangementDt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrangementDt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arrangemnetTid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arrangemnetTid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spiseSted)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spiseSted)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.spiseTid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.spiseTid)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

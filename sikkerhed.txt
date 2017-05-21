@@ -1,0 +1,22 @@
+
+https://github.com/Legends/Custom-SignInManager-for-MVC-5/blob/master/ApplicationSignInManager.cs#L22
+
+http://www.jamessturtevant.com/posts/ASPNET-Identity-Custom-Database-and-OWIN/
+
+https://www.asp.net/identity
+
+
+https://msdn.microsoft.com/en-us/library/dn896559%28v=vs.108%29.aspx
+AuthenticationType that will be used by sign in, defaults to DefaultAuthenticationTypes.ApplicationCookie
+ --> 
+document.getElementById("result").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session."; 
+
+
+
+_LoginPartal.cshtml:
+@if (Request.IsAuthenticated)
+
+
+IdentityConfig.cs:
+public class ApplicationUserManager : UserManager<ApplicationUser>
+public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
